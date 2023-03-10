@@ -29,7 +29,7 @@ for (const file of commandFiles) {
         client.commands.set(command.data.name, command);
     }
     else {
-        console.log('[WARNING] The command at ${filepath} is missing a required "data" or "execute" property.');
+        console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
     }
 
 }
@@ -48,7 +48,7 @@ client.on(Events.InteractionCreate, async interaction => {
         await command.execute(interaction);
     } catch(error) {
         console.error(error);
-        await interaction.reply({ content: `There was an error while eexecuting this command!`, ephemeral: true});
+        await interaction.reply({ content: `There was an error while executing this command!`, ephemeral: true});
     }
 
 });
